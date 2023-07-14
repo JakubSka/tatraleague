@@ -1,5 +1,5 @@
 "use strict";
-
+//hiding header
 window.addEventListener("scroll", function () {
   const leaderboard = document.querySelector(".leaderboard");
   const lbcoords = leaderboard.getBoundingClientRect();
