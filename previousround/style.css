@@ -1,107 +1,18 @@
 body {
-  height: 100vh;
-  background-color: #18191b;
-  width: 100%;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
-}
-.header.hidden {
-  opacity: 0;
-  pointer-events: none;
-}
-.header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  max-width: 100%;
-  background-color: #18191b;
-  padding: 2rem 7rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  z-index: 100;
-}
-
-.logo {
-  position: relative;
-  display: block;
-  max-height: 10rem;
-}
-.logo img {
-  display: block;
-  max-width: 100%;
-  transform-origin: top left;
-  transform: scale(0.2);
-}
-.navbar a {
-  position: relative;
-  font-size: 20px;
-  color: #ffff;
-  font-weight: 500;
-  text-decoration: none;
-  margin-left: 2rem;
-}
-
-.navbar a::before {
-  content: "";
-  position: absolute;
-  top: 100%;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background: #ffff;
-}
-.navbar a:hover::before {
-  width: 100%;
-}
-
-.round {
-  margin-top: 15rem;
-  min-width: 100%;
-  text-align: center;
-}
-table {
-  margin-top: 1.5rem;
-  margin-left: auto;
-  margin-right: auto;
-  border-collapse: separate;
-  border-spacing: 0;
-  width: 50rem;
-  color: #bdc1c6;
-  background-color: #202124;
-  border-radius: 1rem;
-}
-
-th,
-td {
-  text-align: center;
-  padding: 1rem;
-  border-bottom: 1px solid #838383;
-}
-
-p {
-  text-align: center;
-  font-size: 30px;
-  color: #bdc1c6;
-}
-
-@media (max-width: 1601px) {
-  body {
     height: 100vh;
     background-color: #18191b;
     width: 100%;
-    max-width: none;
   }
-  .logo img {
-    display: block;
-    max-width: 10rem;
-    transform-origin: top left;
-    transform: scale(1);
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+  }
+  .header.hidden {
+    opacity: 0;
+    pointer-events: none;
   }
   .header {
     position: fixed;
@@ -109,23 +20,116 @@ p {
     left: 0;
     max-width: 100%;
     background-color: #18191b;
-    padding: 2rem 1.2rem;
+    padding: 2rem 7rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
     z-index: 100;
   }
+  
+  .logo {
+    position: relative;
+    display: block;
+    max-height: 10rem;
+  }
+  .logo img {
+    display: block;
+    max-width: 100%;
+    transform-origin: top left;
+    transform: scale(0.2);
+  }
   .navbar a {
     position: relative;
-    font-size: 17px;
+    font-size: 20px;
     color: #ffff;
     font-weight: 500;
     text-decoration: none;
     margin-left: 2rem;
   }
+  
+  .navbar a::before {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #ffff;
+  }
+  .navbar a:hover::before {
+    width: 100%;
+  }
+  
+  
   .round {
-    margin-top: 5rem;
+    margin-top: 19rem;
+    float: left;
     min-width: 100%;
     text-align: center;
   }
-}
+  table {
+    margin-top: 1.5rem;
+    margin-left: auto;
+    margin-right: auto;
+    border-collapse: separate;
+    border-spacing: 0;
+    width: 50rem;
+    color: #bdc1c6;
+    background-color: #202124;
+    border-radius: 1rem;
+  }
+  
+  th,
+  td {
+    text-align: center;
+    padding: 1rem;
+    border-bottom: 1px solid #838383;
+  }
+  
+  p {
+    text-align: center;
+    font-size: 30px;
+    color: #bdc1c6;
+  }
+  
+  @media (max-width: 1601px) {
+    body {
+      height: 100vh;
+      background-color: #18191b;
+      width: 100%;
+      max-width: none;
+    }
+    .logo img {
+      display: block;
+      max-width: 10rem;
+      transform-origin: top left;
+      transform: scale(1);
+    }
+    .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      max-width: 100%;
+      background-color: #18191b;
+      padding: 2rem 1.2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 100;
+    }
+    .navbar a {
+      position: relative;
+      font-size: 17px;
+      color: #ffff;
+      font-weight: 500;
+      text-decoration: none;
+      margin-left: 2rem;
+    }
+    .round {
+      margin-top: 5rem;
+      float: left;
+      min-width: 50%;
+      text-align: center;
+    }
+  }
+  
