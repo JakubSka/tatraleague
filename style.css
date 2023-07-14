@@ -94,6 +94,12 @@ p {
 }
 
 @media (max-width: 1601px) {
+  body {
+    height: 100vh;
+    background-color: #18191b;
+    width: 100%;
+    max-width: none;
+  }
   .logo img {
     display: block;
     max-width: 10rem;
