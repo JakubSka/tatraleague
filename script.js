@@ -169,6 +169,5 @@ for(let i= 1; i<teamNumber;i++){
   }else if(cellsLeaderboard[0].innerText=='3'){
     cellsLeaderboard[0].style.color="rgb(189, 83, 12)";
   }
-
-  
+cellsLeaderboard[8].innerText= parseInt(cellsLeaderboard[5].innerText) + parseInt(cellsLeaderboard[6].innerText) + parseInt(cellsLeaderboard[7].innerText)
 }
