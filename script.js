@@ -37,12 +37,12 @@ function searchInTeams(searchName, goalsScored, goalsLose) {
   let lose = parseInt(cellsLeaderboard[7].innerText);
   let draw = parseInt(cellsLeaderboard[6].innerText);
     if (teamName == searchName) {
-      teamGoalsScored += parseInt(goalsScored);
+      teamGoalsScored =teamGoalsScored + parseInt(goalsScored);
       cellsLeaderboard[3].innerText=teamGoalsScored;
-      teamGoalsLose += goalsLose;
-      cellsLeaderboard[4].innerText=goalsLose;
+      teamGoalsLose = teamGoalsLose + parseInt(goalsLose);
+      cellsLeaderboard[4].innerText=teamGoalsLose;
       if (goalsScored > goalsLose) {
-        teamPoints += 3;
+        teamPoints = teamPoints + 3;
         cellsLeaderboard[2].innerText=teamPoints;
         win += 1;
         cellsLeaderboard[5].innerText=win;
@@ -68,8 +68,8 @@ function compareValuesInRow(rowIndex){
   }
   // get a value from cells in a row
   const cellsRound = rowRound.getElementsByTagName('td');
-  const firstTeamScore = cellsRound[1].innerText;
-  const secondTeamScore = cellsRound[3].innerText;
+  const firstTeamScore = parseInt(cellsRound[1].innerText);
+  const secondTeamScore = parseInt(cellsRound[3].innerText);
   const firstTeamName=cellsRound[0].innerText;
   const SecondTeamName=cellsRound[4].innerText;
   if(firstTeamScore>secondTeamScore){
@@ -83,7 +83,7 @@ function compareValuesInRow(rowIndex){
     cellsRound[1].style.color="red";
     searchInTeams(firstTeamName,firstTeamScore,secondTeamScore);
   }else if(firstTeamScore&&secondTeamScore==="-"){}
-  else if(secondTeamScore===firstTeamScore){
+  else if(secondTeamScore==firstTeamScore){
     cellsRound[3].style.color="rgb(204, 138, 38)";
     searchInTeams(firstTeamName,firstTeamScore,secondTeamScore);
     cellsRound[1].style.color="rgb(204, 138, 38)";
@@ -121,10 +121,11 @@ function merge(left, right) {
     let rightValue = right[rightIndex].getElementsByClassName("sortValue"+nextVal)[0].textContent;
 
     if (parseFloat(leftValue) === parseFloat(rightValue)) {
-      // Jeśli wartości są równe, porównaj po kolejnej kolumnie
+   
       nextVal=2;
       leftValue = left[leftIndex].getElementsByClassName("sortValue" + nextVal)[0].textContent;
       rightValue = right[rightIndex].getElementsByClassName("sortValue" + nextVal)[0].textContent;
+      nextVal=1;
     }
 
     if (parseFloat(leftValue) > parseFloat(rightValue)) {

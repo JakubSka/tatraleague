@@ -11,9 +11,7 @@ body {
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
 }
-.st{
-  color:rgb(189, 83, 12)
-}
+
 .logo {
   position: relative;
   display: block;
@@ -37,15 +35,15 @@ img {
   margin-top: 0;
   float: left;
   min-width: 50%;
-  max-height: 42.5rem;
+  max-height: 40rem;
   overflow-y: scroll;
   padding: 0.5rem;
   border-collapse: collapse;
 }
-.round::-webkit-scrollbar{
- width: 0;
+.round::-webkit-scrollbar {
+  width: 0;
 }
-.allMatches{
+.allMatches {
   margin-top: 2.1rem;
 }
 
@@ -58,7 +56,6 @@ table {
   color: #bdc1c6;
   background-color: #202124;
   border-radius: 1rem;
-  
 }
 
 th,
@@ -95,7 +92,7 @@ p {
     transform-origin: top left;
     transform: scale(1.4);
   }
-  .allMatches{
+  .allMatches {
     margin-top: 2.1rem;
     margin-left: 14rem;
     width: 100%;
