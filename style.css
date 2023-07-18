@@ -11,7 +11,9 @@ body {
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
 }
-
+.st{
+  color:rgb(189, 83, 12)
+}
 .logo {
   position: relative;
   display: block;

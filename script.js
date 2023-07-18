@@ -159,4 +159,15 @@ for(let i= 1; i<teamNumber;i++){
   }
   const cellsLeaderboard = rowLeaderboard.getElementsByTagName("td");
   cellsLeaderboard[0].innerText=`${i}`
+  if(cellsLeaderboard[0].innerText=='1'){
+    cellsLeaderboard[0].style.color="yellow";
+  }else if(cellsLeaderboard[0].innerText=='2'){
+    cellsLeaderboard[0].style.color="rgb(207, 203, 203)";
+  }else if(cellsLeaderboard[0].innerText=='2'){
+    cellsLeaderboard[0].style.color="rgb(207, 203, 203)";
+  }else if(cellsLeaderboard[0].innerText=='3'){
+    cellsLeaderboard[0].style.color="rgb(189, 83, 12)";
+  }
+
+  
 }
