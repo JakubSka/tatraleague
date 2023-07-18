@@ -6,25 +6,10 @@ body {
 
 * {
   margin: 0;
+  margin-bottom: 10px;
   padding: 0;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
-}
-.header.hidden {
-  opacity: 0;
-  pointer-events: none;
-}
-.header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  max-width: 100%;
-  background-color: #18191b;
-  padding: 2rem 7rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  z-index: 100;
 }
 
 .logo {
@@ -32,56 +17,46 @@ body {
   display: block;
   max-height: 10rem;
 }
-.logo img {
+img {
+  max-height: 10rem;
+  position: relative;
   display: block;
   max-width: 100%;
   transform-origin: top left;
-  transform: scale(0.2);
+  transform: scale(1.4);
 }
-.navbar a {
-  position: relative;
-  font-size: 20px;
-  color: #ffff;
-  font-weight: 500;
-  text-decoration: none;
-  margin-left: 2rem;
-}
-
-.navbar a::before {
-  content: "";
-  position: absolute;
-  top: 100%;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background: #ffff;
-}
-.navbar a:hover::before {
-  width: 100%;
-}
-
 .leaderboard {
   float: left;
   min-width: 50%;
-  margin-top: 19rem;
+  margin-top: 2rem;
   text-align: center;
 }
 .round {
-  margin-top: 19rem;
+  margin-top: 0;
   float: left;
   min-width: 50%;
-  text-align: center;
+  max-height: 42.5rem;
+  overflow-y: scroll;
+  padding: 0.5rem;
+  border-collapse: collapse;
 }
+.round::-webkit-scrollbar{
+ width: 0;
+}
+.allMatches{
+  margin-top: 2.1rem;
+}
+
 table {
-  margin-top: 1.5rem;
+  margin-top: 0;
   margin-left: auto;
   margin-right: auto;
-  border-collapse: separate;
   border-spacing: 0;
   width: 50rem;
   color: #bdc1c6;
   background-color: #202124;
   border-radius: 1rem;
+  
 }
 
 th,
@@ -95,6 +70,7 @@ p {
   text-align: center;
   font-size: 30px;
   color: #bdc1c6;
+  position: sticky;
 }
 
 @media (max-width: 1601px) {
@@ -104,34 +80,26 @@ p {
     width: 100%;
     max-width: none;
   }
-  .logo img {
-    display: block;
-    max-width: 10rem;
-    transform-origin: top left;
-    transform: scale(1);
-  }
-  .header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    max-width: 100%;
-    background-color: #18191b;
-    padding: 2rem 1.2rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    z-index: 100;
-  }
-  .navbar a {
+  .logo {
     position: relative;
-    font-size: 17px;
-    color: #ffff;
-    font-weight: 500;
-    text-decoration: none;
-    margin-left: 2rem;
+    display: block;
+    max-height: 10rem;
+  }
+  img {
+    max-height: 10rem;
+    position: relative;
+    display: block;
+    max-width: 100%;
+    transform-origin: top left;
+    transform: scale(1.4);
+  }
+  .allMatches{
+    margin-top: 2.1rem;
+    margin-left: 14rem;
+    width: 100%;
   }
   .round {
-    margin-top: 5rem;
+    margin-top: 2rem;
     float: left;
     min-width: 50%;
     text-align: center;

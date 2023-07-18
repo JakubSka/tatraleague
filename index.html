@@ -10,17 +10,12 @@
   </head>
   <body>
     <header class="header">
-      <a href="https://jakubska.github.io/tatraleague/" class="logo"><img src="tatra-league.png"></img></a>
-      <nav class="navbar">
-        <a href="previousround\previousround.html">Poprzednie kolejki</a>
-        <a href="#">Składy</a>
-        <a href="#">Ogłoszenia</a>
-        <a href="#">Przyszłe spotkania</a>
-      </nav>
+    <img src="tatra-league.png"></img>
+     
     </header>
     <div class="leaderboard">
       <p>Tabela</p>
-      <table>
+      <table id="tableLeaderboard">
         <thead>
           <tr>
             <th>
@@ -28,7 +23,8 @@
             </th>
             <th>Nazwa</th>
             <th>Punkty</th>
-            <th>Bilans</th>
+            <th>BZ</th>
+            <th>BS</th>
             <th>Wygrane</th>
             <th>Remisy</th>
             <th>Przegrane</th>
@@ -36,90 +32,110 @@
         </thead>
         <tbody>
           <tr>
-            <td>1</td>
+            <td colspan="1">1</td>
             <td>Tatrzanka Emeryci</td>
-            <td>0</td>
+            <td class="sortValue1">0</td>
+            <td class="sortValue2">0</td>
             <td>0</td>
             <td>0</td>
             <td>0</td>
             <td>0</td>
           </tr>
           <tr>
-            <td>2</td>
+            <td colspan="1">2</td>
             <td>Tatrzanka</td>
-            <td>0</td>
+            <td class="sortValue1">0</td>
+            <td class="sortValue2">0</td>
             <td>0</td>
             <td>0</td>
             <td>0</td>
             <td>0</td>
           </tr>
           <tr>
-            <td>3</td>
+            <td colspan="1">3</td>
             <td>FC Bronx</td>
-            <td>0</td>
+            <td class="sortValue1">0</td>
+            <td class="sortValue2">0</td>
             <td>0</td>
             <td>0</td>
             <td>0</td>
             <td>0</td>
           </tr>
           <tr>
-            <td>4</td>
+            <td colspan="1">4</td>
             <td>PKS Jarnice</td>
-            <td>0</td>
+            <td class="sortValue1">0</td>
+            <td class="sortValue2">0</td>
             <td>0</td>
             <td>0</td>
             <td>0</td>
             <td>0</td>
           </tr>
           <tr>
-            <td>5</td>
+            <td colspan="1">5</td>
             <td>Mafia Pniewnik</td>
-            <td>0</td>
+            <td class="sortValue1">0</td>
+            <td class="sortValue2">0</td>
             <td>0</td>
             <td>0</td>
             <td>0</td>
             <td>0</td>
           </tr>
           <tr>
-            <td>6</td>
+            <td colspan="1">6</td>
             <td>Dzikie Smerfy</td>
-            <td>0</td>
+            <td class="sortValue1">0</td>
+            <td class="sortValue2">0</td>
             <td>0</td>
             <td>0</td>
             <td>0</td>
             <td>0</td>
           </tr>
           <tr>
-            <td>7</td>
+            <td colspan="1">7</td>
             <td>Dzikie Smerfy 2</td>
-            <td>0</td>
+            <td class="sortValue1">0</td>
+            <td class="sortValue2">0</td>
             <td>0</td>
             <td>0</td>
             <td>0</td>
             <td>0</td>
           </tr>
           <tr>
-            <td>8</td>
+            <td colspan="1">8</td>
             <td>Promil Makowiec</td>
-            <td>0</td>
+            <td class="sortValue1">0</td>
+            <td class="sortValue2">0</td>
             <td>0</td>
             <td>0</td>
             <td>0</td>
             <td>0</td>
           </tr>
           <tr>
-            <td>9</td>
+            <td colspan="1">9</td>
             <td>Tornado Stawiska</td>
-            <td>0</td>
+            <td class="sortValue1">0</td>
+            <td class="sortValue2">0</td>
             <td>0</td>
             <td>0</td>
             <td>0</td>
             <td>0</td>
           </tr>
           <tr>
-            <td>10</td>
+            <td colspan="1">10</td>
             <td>Big Milfs</td>
+            <td class="sortValue1">0</td>
+            <td class="sortValue2">0</td>
             <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+          </tr>
+          <tr>
+            <td colspan="1">11</td>
+            <td>Spawacze Z Polnej</td>
+            <td class="sortValue1">0</td>
+            <td class="sortValue2">0</td>
             <td>0</td>
             <td>0</td>
             <td>0</td>
@@ -128,37 +144,401 @@
         </tbody>
       </table>
     </div>
+    <p class="allMatches">Wszystkie mecze</p>
     <div class="round">
-<p>Aktualna Kolejka</p>
-<table>
+<table id="tableRound" class="roundTable">
   <tbody>
     <tr>
       <td>Dzikie Smerfy</td>
-      <td>-:-</td>
+      <td>10</td>
+      <td>:</td>
+      <td>0</td>
       <td>Tatrzanka</td>
     </tr>
     <tr>
       <td>Promil Makowiec</td>
-       <td>-:-</td>
+      <td>19</td>
+      <td>:</td>
+      <td>1</td>
       <td>PKS Jarnice</td>
     </tr>
     <tr>
       <td>Tatrzanka Emeryci</td>
-      <td>-:-</td>
+      <td>-</td>
+      <td>:</td>
+      <td>-</td>
       <td>Big Milfs</td>
     </tr>
     <tr>
       <td>Mafia Pniewnik</td>
-      <td>-:-</td>
+      <td>10</td>
+      <td>:</td>
+      <td>12</td>
       <td>Dzikie Smerfy 2</td>
     </tr>
     <tr>
       <td>Fc Bronx</td>
-      <td>-:-</td>
+      <td>3</td>
+      <td>:</td>
+      <td>2</td>
       <td>Tornado Stawiska</td>
+    </tr>
+    <tr>
+      <td>Dzikie Smerfy</td>
+      <td>-</td>
+      <td>:</td>
+      <td>-</td>
+      <td>PKS Jarnice</td>
+    </tr>
+    <tr>
+      <td>Tatrzanka</td>
+      <td>-</td>
+      <td>:</td>
+      <td>-</td>
+      <td>Big Milfs</td>
+    </tr>
+    <tr>
+      <td>Promil Makowiec</td>
+      <td>-</td>
+      <td>:</td>
+      <td>-</td>
+      <td>Dzikie Smerfy 2</td>
+    </tr>
+    <tr>
+      <td>Tatrzanka Emeryci</td>
+      <td>-</td>
+      <td>:</td>
+      <td>-</td>
+      <td>Tornado Stawiska</td>
+    </tr>
+    <tr>
+      <td>Mafia Pniewnik</td>
+      <td>-</td>
+      <td>:</td>
+      <td>-</td>
+      <td>Fc Bronx</td>
+    </tr>
+    <tr>
+      <td>Dzikie Smerfy</td>
+      <td>-</td>
+      <td>:</td>
+      <td>-</td>
+      <td>Big Milfs</td>
+    </tr>
+    <tr>
+      <td>PKS Jarnice</td>
+      <td>-</td>
+      <td>:</td>
+      <td>-</td>
+      <td>Dzikie Smerfy 2</td>
+    </tr>
+    <tr>
+      <td>Tatrzanka</td>
+      <td>-</td>
+      <td>:</td>
+      <td>-</td>
+      <td>Tornado Stawiska</td>
+    </tr>
+    <tr>
+      <td>Promil Makowiec</td>
+      <td>-</td>
+      <td>:</td>
+      <td>-</td>
+      <td>FC Bronx</td>
+    </tr>
+    <tr>
+      <td>Tatrzanka Emeryci</td>
+      <td>-</td>
+      <td>:</td>
+      <td>-</td>
+      <td>Mafia Pniewnik</td>
+    </tr>
+    <tr>
+      <td>Dzikie Smerfy</td>
+      <td>-</td>
+      <td>:</td>
+      <td>-</td>
+      <td>Dzikie Smerfy 2</td>
+    </tr>
+    <tr>
+      <td>Big Milfs</td>
+      <td>-</td>
+      <td>:</td>
+      <td>-</td>
+      <td>Tornado Stawiska</td>
+    </tr>
+    <tr>
+      <td>PKS Jarnice</td>
+      <td>-</td>
+      <td>:</td>
+      <td>-</td>
+      <td>Fc Bronx</td>
+    </tr>
+    <tr>
+      <td>Tatrzanka</td>
+      <td>-</td>
+      <td>:</td>
+      <td>-</td>
+      <td>Mafia Pniewnik</td>
+    </tr>
+    <tr>
+      <td>Promil Makowiec</td>
+      <td>-</td>
+      <td>:</td>
+      <td>-</td>
+      <td>Tatrzanka Emeryci</td>
+    </tr>
+    <tr>
+      <td>Dzikie Smerfy</td>
+      <td>-</td>
+      <td>:</td>
+      <td>-</td>
+      <td>Tornado Stawiska</td>
+    </tr>
+    <tr>
+      <td>Dzikie Smerfy 2</td>
+      <td>-</td>
+      <td>:</td>
+      <td>-</td>
+      <td>FC Bronx</td>
+    </tr>
+    <tr>
+      <td>Big Milfs</td>
+      <td>-</td>
+      <td>:</td>
+      <td>-</td>
+      <td>Mafia Pniewnik</td>
+    </tr>
+    <tr>
+      <td>PKS Jarnice</td>
+      <td>-</td>
+      <td>:</td>
+      <td>-</td>
+      <td>Tatrzanka Emeryci</td>
+    </tr>
+    <tr>
+      <td>Tatrzanka</td>
+      <td>-</td>
+      <td>:</td>
+      <td>-</td>
+      <td>Promil Makowiec</td>
+    </tr>
+    <tr>
+      <td>Dzikie Smerfy</td>
+      <td>-</td>
+      <td>:</td>
+      <td>-</td>
+      <td>FC Bronx</td>
+    </tr>
+    <tr>
+      <td>Tornado Stawiska</td>
+      <td>-</td>
+      <td>:</td>
+      <td>-</td>
+      <td>Mafia Pniewnik</td>
+    </tr>
+    <tr>
+      <td>Dzikie Smerfy 2</td>
+      <td>-</td>
+      <td>:</td>
+      <td>-</td>
+      <td>Tatrzanka Emeryci</td>
+    </tr>
+    <tr>
+      <td>Big Milfs</td>
+      <td>-</td>
+      <td>:</td>
+      <td>-</td>
+      <td>Promil Makowiec</td>
+    </tr>
+    <tr>
+      <td>PKS Jarnice</td>
+      <td>-</td>
+      <td>:</td>
+      <td>-</td>
+      <td>Tatrzanka</td>
+    </tr>
+    <tr>
+      <td>Dzikie Smerfy</td>
+      <td>-</td>
+      <td>:</td>
+      <td>-</td>
+      <td>Mafia Pniewnik</td>
+    </tr>
+    <tr>
+      <td>FC Bronx</td>
+      <td>-</td>
+      <td>:</td>
+      <td>-</td>
+      <td>Tatrzanka Emeryci</td>
+    </tr>
+    <tr>
+      <td>Tornado Stawiska</td>
+      <td>-</td>
+      <td>:</td>
+      <td>-</td>
+      <td>Promil Makowiec</td>
+    </tr>
+    <tr>
+      <td>Dzikie Smerfy 2</td>
+      <td>-</td>
+      <td>:</td>
+      <td>-</td>
+      <td>Tatrzanka</td>
+    </tr>
+    <tr>
+      <td>Big Milfs</td>
+      <td>-</td>
+      <td>:</td>
+      <td>-</td>
+      <td>PKS Jarnice</td>
+    </tr>
+    <tr>
+      <td>Dzikie Smerfy</td>
+      <td>-</td>
+      <td>:</td>
+      <td>-</td>
+      <td>Tatrzanka Emeryci</td>
+    </tr>
+    <tr>
+      <td>Mafia Pniewnik</td>
+      <td>-</td>
+      <td>:</td>
+      <td>-</td>
+      <td>Promil Makowiec</td>
+    </tr>
+    <tr>
+      <td>FC Bronx</td>
+      <td>-</td>
+      <td>:</td>
+      <td>-</td>
+      <td>Tatrzanka</td>
+    </tr>
+    <tr>
+      <td>Tornado Stawiska</td>
+      <td>-</td>
+      <td>:</td>
+      <td>-</td>
+      <td>PKS Jarnice</td>
+    </tr>
+    <tr>
+      <td>Dzikie Smerfy 2</td>
+      <td>-</td>
+      <td>:</td>
+      <td>-</td>
+      <td>Big Milfs</td>
+    </tr>
+    <tr>
+      <td>Dzikie Smerfy</td>
+      <td>-</td>
+      <td>:</td>
+      <td>-</td>
+      <td>Promil Makowiec</td>
+    </tr>
+    <tr>
+      <td>Tatrzanka Emeryci</td>
+      <td>11</td>
+      <td>:</td>
+      <td>9</td>
+      <td>Tatrzanka</td>
+    </tr>
+    <tr>
+      <td>Mafia Pniewnik</td>
+      <td>-</td>
+      <td>:</td>
+      <td>-</td>
+      <td>PKS Jarnice</td>
+    </tr>
+    <tr>
+      <td>FC Bronx</td>
+      <td>-</td>
+      <td>:</td>
+      <td>-</td>
+      <td>Big Milfs</td>
+    </tr>
+    <tr>
+      <td>Tornado Stawiska</td>
+      <td>-</td>
+      <td>:</td>
+      <td>-</td>
+      <td>Dzikie Smerfy 2</td>
+    </tr>
+    <tr>
+      <td>Spawacze Z Polnej</td>
+      <td>-</td>
+      <td>:</td>
+      <td>-</td>
+      <td>Tatrzanka</td>
+    </tr>
+    <tr>
+      <td>Spawacze Z Polnej</td>
+      <td>-</td>
+      <td>:</td>
+      <td>-</td>
+      <td>PKS Jarnice</td>
+    </tr>
+    <tr>
+      <td>Tatrzanka Emeryci</td>
+      <td>-</td>
+      <td>:</td>
+      <td>-</td>
+      <td>Spawacze Z Polnej</td>
+    </tr>
+    <tr>
+      <td>Mafia Pniewnik</td>
+      <td>-</td>
+      <td>:</td>
+      <td>-</td>
+      <td>Spawacze Z Polnej</td>
+    </tr>
+    <tr>
+      <td>Fc Bronx</td>
+      <td>-</td>
+      <td>:</td>
+      <td>-</td>
+      <td>Spawacze Z Polnej</td>
+    </tr>
+    <tr>
+      <td>Dzikie Smerfy</td>
+      <td>-</td>
+      <td>:</td>
+      <td>-</td>
+      <td>Spawacze Z Polnej</td>
+    </tr>
+    <tr>
+      <td>Dzikie Smerfy 2</td>
+      <td>-</td>
+      <td>:</td>
+      <td>-</td>
+      <td>Spawacze Z Polnej</td>
+    </tr>
+    <tr>
+      <td>Tornado Stawiska</td>
+      <td>-</td>
+      <td>:</td>
+      <td>-</td>
+      <td>Spawacze Z Polnej</td>
+    </tr>
+    <tr>
+      <td>Promil Makowiec</td>
+      <td>-</td>
+      <td>:</td>
+      <td>-</td>
+      <td>Spawacze Z Polnej</td>
+    </tr>
+    <tr>
+      <td>Big Milfs</td>
+      <td>-</td>
+      <td>:</td>
+      <td>-</td>
+      <td>Spawacze Z Polnej</td>
     </tr>
   </tbody>
 </table>
+
+
+
+
     </div>
   </body>
 </html>
