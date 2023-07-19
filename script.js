@@ -179,3 +179,5 @@ for (let i = 1; i < teamNumber; i++) {
     parseInt(cellsLeaderboard[7].innerText) +
     parseInt(cellsLeaderboard[8].innerText);
 }
+
+
