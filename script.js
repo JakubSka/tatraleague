@@ -221,9 +221,11 @@ for (let i = 1; i < teamNumber; i++) {
     parseInt(cellsLeaderboard[7].innerText) +
     parseInt(cellsLeaderboard[8].innerText);
 }
+
 let input, filter, table, tr, td, i, j, txtValue;
 input = document.getElementById("searchInput");
 table = document.getElementById("tableRound");
+
 input.addEventListener("input", e=>{
   tr = table.getElementsByTagName("tr");
   filter = e.target.value.toUpperCase();
@@ -241,6 +243,7 @@ input.addEventListener("input", e=>{
           }
       }
   }})
+  
 
 
 
