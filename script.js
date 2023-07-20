@@ -90,10 +90,52 @@ function compareValuesInRow(rowIndex) {
     cellsRound[1].style.color = "rgb(204, 138, 38)";
     searchInTeams(SecondTeamName, secondTeamScore, firstTeamScore);
   }
+
+}
+
+function finishedMatches(rowIndex){
+  const firstRowRound = tableRound.rows[rowIndex];
+  const anotherRowRound = tableRound.rows[rowIndex + 1];
+  if (!firstRowRound) {
+    console.error("Incorrect first row index");
+    return;
+  }
+  if (!anotherRowRound) {
+    console.log(anotherRowRound);
+    console.error("Incorrect another row index");
+    return;
+  }
+  // get a value from cells in a row
+  const cellsFirstRound = firstRowRound.getElementsByTagName("td");
+  const cellsAnotherRound = anotherRowRound.getElementsByTagName("td");
+  const firstScore = parseInt(cellsFirstRound[1].innerText);
+  const anotherScore = parseInt(cellsAnotherRound[1].innerText);
+
+ if(isNaN(firstScore)){
+  if(!isNaN(anotherScore)){
+    tableRound.rows[rowIndex].parentNode.insertBefore(tableRound.rows[rowIndex+1],tableRound.rows[rowIndex]);
+  } 
+  else if(isNaN(anotherRowRound)){
+
+    for(let rowIndex=0;rowIndex<tableRound.rows.length-1;rowIndex++){
+        const searchedFinishedMatch = tableRound.rows[rowIndex + 1 ];
+        const searchedFinishedRound = searchedFinishedMatch.getElementsByTagName("td");
+        const searchedFinishedScore = parseInt(searchedFinishedRound[1].innerText);
+        if(!isNaN(searchedFinishedScore)){
+        tableRound.rows[rowIndex].parentNode.insertBefore(tableRound.rows[rowIndex+1],tableRound.rows[rowIndex]);
+          } 
+        }
+      }
+    }
 }
 //implement comparing
 for (let i = 0; i < tableRound.rows.length; i++) {
   compareValuesInRow(i);
+
+}
+for (let i = 0; i < tableRound.rows.length -1; i++) {
+  finishedMatches(i);
+
 }
 
 //sorting points in leaderboard by mergesort
