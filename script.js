@@ -221,12 +221,11 @@ for (let i = 1; i < teamNumber; i++) {
     parseInt(cellsLeaderboard[7].innerText) +
     parseInt(cellsLeaderboard[8].innerText);
 }
-function searchTable() {
-  let input, filter, table, tr, td, i, j, txtValue;
-  input = document.getElementById("searchInput");
-  table = document.getElementById("tableRound");
-  tr = table.getElementsByTagName("tr");
+let input, filter, table, tr, td, i, j, txtValue;
+input = document.getElementById("searchInput");
+table = document.getElementById("tableRound");
 input.addEventListener("input", e=>{
+  tr = table.getElementsByTagName("tr");
   filter = e.target.value.toUpperCase();
   for (i = 0; i < tr.length; i++) {
       td = tr[i].getElementsByTagName("td");
@@ -242,6 +241,6 @@ input.addEventListener("input", e=>{
           }
       }
   }})
-  
-}
+
+
 
