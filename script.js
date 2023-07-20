@@ -221,5 +221,27 @@ for (let i = 1; i < teamNumber; i++) {
     parseInt(cellsLeaderboard[7].innerText) +
     parseInt(cellsLeaderboard[8].innerText);
 }
-
+function searchTable() {
+  let input, filter, table, tr, td, i, j, txtValue;
+  input = document.getElementById("searchInput");
+  table = document.getElementById("tableRound");
+  tr = table.getElementsByTagName("tr");
+input.addEventListener("input", e=>{
+  filter = e.target.value.toUpperCase();
+  for (i = 0; i < tr.length; i++) {
+      td = tr[i].getElementsByTagName("td");
+      for (j = 0; j < td.length; j++) {
+          if (td[j]) {
+              txtValue = td[j].textContent || td[j].innerText;
+              if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                  tr[i].style.display = "";
+                  break; 
+              } else {
+                  tr[i].style.display = "none"; 
+              }
+          }
+      }
+  }})
+  
+}
 
