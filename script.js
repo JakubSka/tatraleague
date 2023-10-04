@@ -1,24 +1,24 @@
 "use strict";
-//hiding header
-// window.addEventListener("scroll", function () {
-/*
-  const leaderboard = document.querySelector(".leaderboard");
-  const lbcoords = leaderboard.getBoundingClientRect();
-  console.log(lbcoords);
-  */
-//   const header = document.querySelector(".header");
-//   const threshold = 100;
-//   const scrollPosition = window.scrollY || document.documentElement.scrollTop;
-//   if (scrollPosition > threshold) {
-//     header.classList.add("hidden");
-//   } else {
-//     header.classList.remove("hidden");
-//   }
-// });
 
 const tableRound = document.getElementById("tableRound");
 const tableLeaderboard = document.getElementById("tableLeaderboard");
 const teamNumber = tableLeaderboard.rows.length;
+//adding matches
+
+function generateMatches(firstName, firstScore, secondScore, SecondName) {
+  const parentElement = document.querySelector(".tbody");
+  const markup = `
+<tr>
+      <td>${firstName}</td>
+      <td>${firstScore}</td>
+      <td>:</td>
+      <td>${secondScore}</td>
+      <td>${SecondName}</td>
+    </tr>
+    `;
+  parentElement.insertAdjacentHTML("afterbegin", markup);
+}
+
 //adding points and wins
 function searchInTeams(searchName, goalsScored, goalsLose) {
   for (let i = 1; i < teamNumber; i++) {
@@ -90,10 +90,9 @@ function compareValuesInRow(rowIndex) {
     cellsRound[1].style.color = "rgb(204, 138, 38)";
     searchInTeams(SecondTeamName, secondTeamScore, firstTeamScore);
   }
-
 }
 
-function finishedMatches(rowIndex){
+function finishedMatches(rowIndex) {
   const firstRowRound = tableRound.rows[rowIndex];
   const anotherRowRound = tableRound.rows[rowIndex + 1];
   if (!firstRowRound) {
@@ -111,31 +110,97 @@ function finishedMatches(rowIndex){
   const firstScore = parseInt(cellsFirstRound[1].innerText);
   const anotherScore = parseInt(cellsAnotherRound[1].innerText);
 
- if(isNaN(firstScore)){
-  if(!isNaN(anotherScore)){
-    tableRound.rows[rowIndex].parentNode.insertBefore(tableRound.rows[rowIndex+1],tableRound.rows[rowIndex]);
-  } 
-  else if(isNaN(anotherRowRound)){
-
-    for(let rowIndex=0;rowIndex<tableRound.rows.length-1;rowIndex++){
-        const searchedFinishedMatch = tableRound.rows[rowIndex + 1 ];
-        const searchedFinishedRound = searchedFinishedMatch.getElementsByTagName("td");
-        const searchedFinishedScore = parseInt(searchedFinishedRound[1].innerText);
-        if(!isNaN(searchedFinishedScore)){
-        tableRound.rows[rowIndex].parentNode.insertBefore(tableRound.rows[rowIndex+1],tableRound.rows[rowIndex]);
-          } 
+  if (isNaN(firstScore)) {
+    if (!isNaN(anotherScore)) {
+      tableRound.rows[rowIndex].parentNode.insertBefore(
+        tableRound.rows[rowIndex + 1],
+        tableRound.rows[rowIndex]
+      );
+    } else if (isNaN(anotherRowRound)) {
+      for (
+        let rowIndex = 0;
+        rowIndex < tableRound.rows.length - 1;
+        rowIndex++
+      ) {
+        const searchedFinishedMatch = tableRound.rows[rowIndex + 1];
+        const searchedFinishedRound =
+          searchedFinishedMatch.getElementsByTagName("td");
+        const searchedFinishedScore = parseInt(
+          searchedFinishedRound[1].innerText
+        );
+        if (!isNaN(searchedFinishedScore)) {
+          tableRound.rows[rowIndex].parentNode.insertBefore(
+            tableRound.rows[rowIndex + 1],
+            tableRound.rows[rowIndex]
+          );
         }
       }
     }
+  }
 }
 //implement comparing
+
+generateMatches("Dzikie Smerfy", "10", "0", "Tatrzanka");
+generateMatches("Promil Makowiec", "19", "1", "PKS Jarnice");
+generateMatches("Tatrzanka Emeryci", "-", "-", "Big Milfs");
+generateMatches("Mafia Pniewnik", "10", "12", "Dzikie Smerfy 2");
+generateMatches("FC Bronx", "2", "3", "Tornado Stawiska");
+generateMatches("Dzikie Smerfy", "11", "7", "PKS Jarnice");
+generateMatches("Tatrzanka", "-", "-", "Big Milfs");
+generateMatches("Promil Makowiec", "10", "3", "Dzikie Smerfy 2");
+generateMatches("Tatrzanka Emeryci", "2", "3", "Tornado Stawiska");
+generateMatches("Mafia Pniewnik", "-", "-", "FC Bronx");
+generateMatches("Dzikie Smerfy", "-", "-", "Big Milfs");
+generateMatches("PKS Jarnice", "-", "-", "Dzikie Smerfy 2");
+generateMatches("Tatrzanka", "-", "-", "Tornado Stawiska");
+generateMatches("Promil Makowiec", "-", "-", "FC Bronx");
+generateMatches("Tatrzanka Emeryci", "-", "-", "Mafia Pniewnik");
+generateMatches("Dzikie Smerfy", "-", "-", "Dzikie Smerfy 2");
+generateMatches("Big Milfs", "-", "-", "Tornado Stawiska");
+generateMatches("PKS Jarnice", "-", "-", "FC Bronx");
+generateMatches("Tatrzanka", "6", "8", "Mafia Pniewnik");
+generateMatches("Promil Makowiec", "12", "2", "Tatrzanka Emeryci");
+generateMatches("Dzikie Smerfy", "-", "-", "Tornado Stawiska");
+generateMatches("Dzikie Smerfy 2", "-", "-", "FC Bronx");
+generateMatches("Spawacze Z Polnej", "-", "-", "Big Milfs");
+generateMatches("Big Milfs", "-", "-", "Mafia Pniewnik");
+generateMatches("PKS Jarnice", "-", "-", "Tatrzanka Emeryci");
+generateMatches("Tatrzanka", "-", "-", "Promil Makowiec");
+generateMatches("Dzikie Smerfy", "-", "-", "FC Bronx");
+generateMatches("Tornado Stawiska", "-", "-", "Mafia Pniewnik");
+generateMatches("Dzikie Smerfy 2", "6", "7", "Tatrzanka Emeryci");
+generateMatches("Big Milfs", "6", "7", "Promil Makowiec");
+generateMatches("PKS Jarnice", "8", "5", "Tatrzanka");
+generateMatches("Dzikie Smerfy", "-", "-", "Mafia Pniewnik");
+generateMatches("FC Bronx", "-", "-", "Tatrzanka Emeryci");
+generateMatches("Tornado Stawiska", "-", "-", "Promil Makowiec");
+generateMatches("Big Milfs", "-", "-", "PKS Jarnice");
+generateMatches("Dzikie Smerfy", "9", "7", "Tatrzanka Emeryci");
+generateMatches("Mafia Pniewnik", "5", "16", "Promil Makowiec");
+generateMatches("Tatrzanka", "-", "-", "FC Bronx");
+generateMatches("Tornado Stawiska", "17", "1", "PKS Jarnice");
+generateMatches("Dzikie Smerfy 2", "-", "-", "Big Milfs");
+generateMatches("Dzikie Smerfy", "3", "6", "Promil Makowiec");
+generateMatches("Tatrzanka", "9", "16", "Tatrzanka Emeryci");
+generateMatches("Spawacze Z Polnej", "-", "-", "Tatrzanka");
+generateMatches("Mafia Pniewnik", "16", "6", "PKS Jarnice");
+generateMatches("FC Bronx", "-", "-", "Big Milfs");
+generateMatches("Tornado Stawiska", "-", "-", "Dzikie Smerfy 2");
+generateMatches("Spawacze Z Polnej", "-", "-", "PKS Jarnice");
+generateMatches("Spawacze Z Polnej", "-", "-", "Tatrzanka Emeryci");
+generateMatches("Mafia Pniewnik", "-", "-", "Tatrzanka");
+generateMatches("Spawacze Z Polnej", "-", "-", "FC Bronx");
+generateMatches("Spawacze Z Polnej", "-", "-", "Dzikie Smerfy");
+generateMatches("Spawacze Z Polnej", "-", "-", "Dzikie Smerfy 2");
+generateMatches("Spawacze Z Polnej", "-", "-", "Tornado Stawiska");
+generateMatches("Promil Makowiec", "-", "-", "Spawacze Z Polnej");
+generateMatches("Dzikie Smerfy 2", "12", "6", "Tatrzanka");
+
 for (let i = 0; i < tableRound.rows.length; i++) {
   compareValuesInRow(i);
-
 }
-for (let i = 0; i < tableRound.rows.length -1; i++) {
+for (let i = 0; i < tableRound.rows.length - 1; i++) {
   finishedMatches(i);
-
 }
 
 //sorting points in leaderboard by mergesort
@@ -226,24 +291,21 @@ let input, filter, table, tr, td, i, j, txtValue;
 input = document.getElementById("searchInput");
 table = document.getElementById("tableRound");
 
-input.addEventListener("input", e=>{
+input.addEventListener("input", (e) => {
   tr = table.getElementsByTagName("tr");
   filter = e.target.value.toUpperCase();
   for (i = 0; i < tr.length; i++) {
-      td = tr[i].getElementsByTagName("td");
-      for (j = 0; j < td.length; j++) {
-          if (td[j]) {
-              txtValue = td[j].textContent || td[j].innerText;
-              if (txtValue.toUpperCase().indexOf(filter) > -1) {
-                  tr[i].style.display = "";
-                  break; 
-              } else {
-                  tr[i].style.display = "none"; 
-              }
-          }
+    td = tr[i].getElementsByTagName("td");
+    for (j = 0; j < td.length; j++) {
+      if (td[j]) {
+        txtValue = td[j].textContent || td[j].innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+          tr[i].style.display = "";
+          break;
+        } else {
+          tr[i].style.display = "none";
+        }
       }
-  }})
-  
-
-
-
+    }
+  }
+});
